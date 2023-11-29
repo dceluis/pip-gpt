@@ -4,22 +4,21 @@ Install Python libraries to your custom GPTs
 
 ## Usage
 
-Clone the repository
-
+#### Clone the repository
 ```
 git clone https://github.com/dceluis/pip-gpt.git
 cd pip-gpt
 ```
 
-and run
-
+#### Run
 ```
 python generate.py ultralytics==8.0.220
 ```
+This will create a `bundle.zip` file in the current directory.
 
-This will create a bundle.zip that you should upload to your custom GPT.
+#### Upload `bundle.zip` to your custom GPT.
 
-Then, prepend the following instructions to your GPT prompt:
+#### Finally, prepend the following instructions to your GPT prompt:
 
 ```
 When starting the conversation, and before attempting code execution, you will:
@@ -31,9 +30,9 @@ When starting the conversation, and before attempting code execution, you will:
 ## Caveats
 
 1. This method fails often. The good part is that GPT-4 will try to correct what
-   went wrong, the bad part is that it's a bad user experience anyways.
+   went wrong, the bad part is that it's a bad user experience anyway.
 2. It takes a while. You will be adding at least 20 seconds of delay to your
-   first respose while the install scripts are extracted and run.
+   first response while the install scripts are extracted and run.
 3. It doesn't add dependencies. I have not yet found a clean way of only adding
    dependencies not already present in the GPT host.
 
