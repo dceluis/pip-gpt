@@ -1,13 +1,19 @@
-## pip-gpt
+# pip-gpt
 
 Install Python libraries to your custom GPTs
 
 ## Usage
 
+Clone the repository
+
 ```
 git clone https://github.com/dceluis/pip-gpt.git
 cd pip-gpt
+```
 
+and run
+
+```
 python generate.py ultralytics==8.0.220
 ```
 
@@ -15,10 +21,12 @@ This will create a bundle.zip that you should upload to your custom GPT.
 
 Then, prepend the following instructions to your GPT prompt:
 
-> When starting the conversation, and before attempting code execution, you will:
-> 1. Unzip the bundle file (which is available in your current workspace) to the ./pip_gpt folder.
-> 2. Read each install script in ./pip_gpt/install_scripts and print the file contents.
-> 3. Run each install script contents, run the installation silently (don't output installation success messages).
+```
+When starting the conversation, and before attempting code execution, you will:
+1. Unzip the bundle file (which is available in your current workspace) to the ./pip_gpt folder.
+2. Read each install script in ./pip_gpt/install_scripts and print the file contents.
+3. Run each install script contents, run the installation silently (don't output installation success messages).
+```
 
 ## Caveats
 
@@ -29,8 +37,8 @@ Then, prepend the following instructions to your GPT prompt:
 3. It doesn't add dependencies. I have not yet found a clean way of only adding
    dependencies not already present in the GPT host.
 
-# TODO
+## TODO
 
-[] Merge install scripts into one.
-[] Specify the platform so that it matches the GPTs host machine.
-[] Include pruned dependency tree.
+- [ ] Merge install scripts into one.
+- [ ] Specify the platform so that it matches the GPTs host machine.
+- [ ] Include pruned dependency tree.
